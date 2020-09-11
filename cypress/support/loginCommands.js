@@ -3,13 +3,13 @@
 
 Cypress.Commands.add('login', (email, password) =>{
     cy.get('[data-testid=login-btn]')
-        .click();
+    .click();
 
-        cy.get('input[name="email"]')
-        .clear()
-        .type(email);
+    cy.get('input[name="email"]')
+    .clear()
+    .type(email);
 
-        cy.get('input[name="password"]')
-        .clear()
-        .type(password+'{enter}');
+    cy.get('input[name="password"]')
+    .clear()
+    .type(password+'{enter}');
 })

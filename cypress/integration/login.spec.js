@@ -24,7 +24,21 @@ context('Login and register tests', () => {
     })
 
     it('Should display an error when email is empty', () => {
-        
+        cy.get('[data-testid=login-btn]')
+        .click();
+        cy.get('input[name="email"]')
+        .clear();
+        cy.get('.input__error')
+        .should('contain', 'Please fill out this field.');
+    })
+
+    it('Should display an error when password is empty', () => {
+        cy.get('[data-testid=login-btn]')
+        .click();
+        cy.get('input[name="password"]')
+        .clear();
+        cy.get('.input__error')
+        .should('contain', 'Please fill out this field.');
     })
 
 })
